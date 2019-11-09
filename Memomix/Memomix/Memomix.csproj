@@ -136,6 +136,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Cards\Level1\carte1.png" />
+    <Content Include="Assets\Cards\Level1\carte2.png" />
+    <Content Include="Assets\Cards\Level1\carte3.png" />
+    <Content Include="Assets\Cards\Level1\carte4.png" />
+    <Content Include="Assets\Cards\Level1\carte5.png" />
+    <Content Include="Assets\Cards\Level1\carte6.png" />
+    <Content Include="Assets\Cards\Test\carte1.png" />
+    <Content Include="Assets\Cards\Test\carte2.png" />
+    <Content Include="Assets\Cards\Test\carte3.png" />
+    <Content Include="Assets\Cards\Test\carte4.png" />
+    <Content Include="Assets\Cards\Test\carte5.png" />
+    <Content Include="Assets\Cards\Test\intrus.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -169,7 +181,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Cards\Level1\" />
     <Folder Include="Assets\Cards\Level2\" />
     <Folder Include="Assets\Cards\Level3\" />
     <Folder Include="Assets\HomeScreen\" />

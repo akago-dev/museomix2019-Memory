@@ -23,28 +23,45 @@ namespace Memomix
     /// </summary>
     public sealed partial class MemoryPage : Page
     {
-        private int _levelId = 1;
         public MemoryPage()
         {
             this.InitializeComponent();
+            LevelNameText.Text = "Niveau " + App.LevelId;
+            SetCardsForLevel(App.LevelId);
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+
+        private void SetCardsForLevel(int levelId)
         {
-            base.OnNavigatedTo(e);
-            
-            String levelString= e.Parameter.ToString();
-            int levelId;
-            Int32.TryParse(levelString, out levelId);
-            if (levelId != null)
-                _levelId = levelId;
+            var cardsId = new List<int>() { 1, 2, 3, 4, 5, 6 };
+            var player1Cards = this.Player1Grid.Children;
+            var player2Cards = this.Player2Grid.Children;
+
+            //removing validator
+            player2Cards.RemoveAt(3);
+
+            /*
+            Tirage aléatoire dans la liste d'identifiants
+            On affecte une image a deux enfants
+            on "retire" les enfants 
+            le dernier enfant est l'intrus
+            On active un bool intrus
+            */
 
 
-            LevelNameText.Text = "Niveau " + _levelId;
+            // foreach (UIElement elem in this.Player1Grid)
+
+        }
+
+        public int GetRandomNumber(int minimum, int maximum)
+        {
+            Random random = new Random();
+            return random.Next() * (maximum - minimum) + minimum;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
+            //Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
+            Frame.GoBack();
 
         }
     }

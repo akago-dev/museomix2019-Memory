@@ -30,20 +30,20 @@ namespace Memomix
 
         private void Level1Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MemoryPage), 1, new SuppressNavigationTransitionInfo());
-
+            App.LevelId = 1;
+            Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
         }
 
         private void Level2Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MemoryPage), 2, new SuppressNavigationTransitionInfo());
-
+            App.LevelId = 2;
+            Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
         }
 
         private void Level3Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MemoryPage), 3, new SuppressNavigationTransitionInfo());
-
+            App.LevelId = 3;
+            Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
         }
     }
 }
