@@ -6,9 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="Black">
 
     <Grid>
-
+        <StackPanel Orientation="Horizontal" Spacing="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="Level1Button" Content="Niveau 1" Foreground="White" Click="Level1Button_Click" Style="{StaticResource AccentButtonStyle}"/>
+            <Button x:Name="Level2Button" Content="Niveau 2" Foreground="White" Click="Level2Button_Click" Style="{StaticResource AccentButtonStyle}"/>
+            <Button x:Name="Level3Button" Content="Niveau 3" Foreground="White" Click="Level3Button_Click" Style="{StaticResource AccentButtonStyle}"/>
+        </StackPanel>
     </Grid>
 </Page>

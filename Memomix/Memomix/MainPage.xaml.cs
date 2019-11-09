@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -25,6 +26,24 @@ namespace Memomix
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Level1Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MemoryPage), 1, new SuppressNavigationTransitionInfo());
+
+        }
+
+        private void Level2Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MemoryPage), 2, new SuppressNavigationTransitionInfo());
+
+        }
+
+        private void Level3Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MemoryPage), 3, new SuppressNavigationTransitionInfo());
+
         }
     }
 }
