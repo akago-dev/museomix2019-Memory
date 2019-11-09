@@ -7,8 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="393"
-    d:DesignWidth="400"
-    Background="Black">
+    d:DesignWidth="400">
     <UserControl.Resources>
         <Storyboard x:Name="FlipOpen">
             <DoubleAnimationUsingKeyFrames 
@@ -36,16 +35,19 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid Tapped="Grid_Tapped">
-        <Image x:Name="ImageCard" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png">
-            <Image.Projection>
-                <PlaneProjection RotationX="-90"/>
-            </Image.Projection>
-        </Image>
-        <Image x:Name="ImageCover" Stretch="Uniform" Source="/Assets/Cards/Test/intrus.png">
-            <Image.Projection>
-                <PlaneProjection/>
-            </Image.Projection>
-        </Image>
-    </Grid>
+    <Button Click="Button_Click" ClickMode="Release">
+        <Grid>
+            <Image x:Name="ImageCard" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png">
+                <Image.Projection>
+                    <PlaneProjection RotationX="-90"/>
+                </Image.Projection>
+            </Image>
+            <Image x:Name="ImageCover" Stretch="Uniform" Source="/Assets/Cards/cover.png">
+                <Image.Projection>
+                    <PlaneProjection/>
+                </Image.Projection>
+            </Image>
+            <Image x:Name="ImageValidator" Opacity="0" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png"/>
+        </Grid>
+    </Button>
 </UserControl>

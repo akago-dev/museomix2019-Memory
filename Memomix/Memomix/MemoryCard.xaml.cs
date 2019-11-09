@@ -22,16 +22,27 @@ namespace Memomix
     public sealed partial class MemoryCard : UserControl
     {
         private bool cardOpen;
-        public static readonly DependencyProperty IsValidatorProperty =
-           DependencyProperty.Register(
-               "IsValidator", typeof(Boolean),
-               typeof(MemoryCard), null
-           );
-        // The property wrapper, so that callers can use this property through a simple ExampleClassInstance.IsSpinning usage rather than requiring property system APIs
+        private bool isValidator;
+        public int CardId = 1;
+
+        public event EventHandler MemoryCardOpened;
+
         public bool IsValidator
         {
-            get { return (bool)GetValue(IsValidatorProperty); }
-            set { SetValue(IsValidatorProperty, value); }
+            get
+            {
+                return this.isValidator;
+            }
+            set
+            {
+                this.isValidator = value;
+                if (value == true)
+                {
+                    this.ImageCard.Opacity = 0;
+                    this.ImageCover.Opacity = 0.5;
+                    this.ImageValidator.Opacity = 0;
+                }
+            }
         }
 
         public MemoryCard()
@@ -39,27 +50,43 @@ namespace Memomix
             this.InitializeComponent();
         }
 
-        private void Grid_Tapped(object sender, TappedRoutedEventArgs e)
+        public void SetImageFromLevelAndCardId(int levelId = 1, int cardId = 1)
         {
-            if (cardOpen == false)
+            this.CardId = cardId;
+            this.ImageCard.Source = new BitmapImage(new Uri("ms-appx:///Assets/Cards/Level"+levelId+"/carte"+ cardId +".png"));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MemoryCardOpened?.Invoke(this, null);
+            if (IsValidator == false)
             {
-                FlipOpen.Begin();
-                cardOpen = true;
+                if (cardOpen == false)
+                {
+                    FlipOpen.Begin();
+                    cardOpen = true;
+                }
+                else
+                {
+                    FlipClose.Begin();
+                    cardOpen = false;
+                }
+            } else
+            {
+                // fire event validator clicked
+                // check other memory card
+                //
             }
-            else
+        }
+
+        public void Close()
+        {
+            if (cardOpen)
             {
                 FlipClose.Begin();
                 cardOpen = false;
             }
+                
         }
-
-       /* private void SetImageFromLevel(int levelId)
-        {
-            int cardId = GetRandomNumber(1, 5);
-            Image img = new Image();
-            img.Source = new BitmapImage(new Uri("ms-appx:///Assets/Cards/"+levelId+"/carte"+ cardId +".png"));
-        }*/
-
-  
     }
 }

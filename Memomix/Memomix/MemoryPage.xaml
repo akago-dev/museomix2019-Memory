@@ -45,7 +45,7 @@
             <local:MemoryCard x:Name="Card8" Grid.Row="1" Width="200" Height="150"/>
             <local:MemoryCard x:Name="Card9" Grid.Row="2" Width="200" Height="150"/>
 
-            <local:MemoryCard x:Name="Card10" IsValidator="True"  Grid.Column="1" Grid.Row="0" Width="200" Height="150" Margin="100 0"/>
+            <local:MemoryCard x:Name="ValidatorCard" Grid.Column="1" Grid.Row="0" Width="200" Height="150" Margin="100 0"/>
             <local:MemoryCard x:Name="Card11" Grid.Column="1" Grid.Row="1" Width="200" Height="150" Margin="100 0"/>
             <local:MemoryCard x:Name="Card12" Grid.Column="1" Grid.Row="2" Width="200" Height="150" Margin="100 0"/>
         </Grid>
