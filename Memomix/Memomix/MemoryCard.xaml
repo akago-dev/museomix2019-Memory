@@ -6,40 +6,42 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="393"
-    d:DesignWidth="400">
+    d:DesignHeight="300"
+    d:DesignWidth="200">
     <UserControl.Resources>
         <Storyboard x:Name="FlipOpen">
             <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)"
+                Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)"
                 Storyboard.TargetName="ImageCover">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" 
+                Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" 
                 Storyboard.TargetName="ImageCard">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-90"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Name="FlipClose">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ImageCover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ImageCover">
                 <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="90"/>
                 <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ImageCard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ImageCard">
                 <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-90"/>
                 <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-90"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
 
-    <Button Click="Button_Click" ClickMode="Release">
+    <!--<Grid PointerPressed="Button_PointerPressed" PointerReleased="Button_PointerReleased">-->
+    <Grid>
+    <RepeatButton Click="Button_Click" ClickMode="Press" Delay="1000">
         <Grid>
             <Image x:Name="ImageCard" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png">
                 <Image.Projection>
-                    <PlaneProjection RotationX="-90"/>
+                    <PlaneProjection RotationY="-90"/>
                 </Image.Projection>
             </Image>
             <Image x:Name="ImageCover" Stretch="Uniform" Source="/Assets/Cards/cover.png">
@@ -49,5 +51,7 @@
             </Image>
             <Image x:Name="ImageValidator" Opacity="0" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png"/>
         </Grid>
-    </Button>
+    </RepeatButton>
+    </Grid>
+    <!--</Grid>-->
 </UserControl>

@@ -143,6 +143,12 @@
     <Content Include="Assets\Cards\Level1\carte4.png" />
     <Content Include="Assets\Cards\Level1\carte5.png" />
     <Content Include="Assets\Cards\Level1\carte6.png" />
+    <Content Include="Assets\Cards\Level2\carte1.png" />
+    <Content Include="Assets\Cards\Level2\carte2.png" />
+    <Content Include="Assets\Cards\Level2\carte3.png" />
+    <Content Include="Assets\Cards\Level2\carte4.png" />
+    <Content Include="Assets\Cards\Level2\carte5.png" />
+    <Content Include="Assets\Cards\Level2\carte6.png" />
     <Content Include="Assets\Cards\Test\carte1.png" />
     <Content Include="Assets\Cards\Test\carte2.png" />
     <Content Include="Assets\Cards\Test\carte3.png" />
@@ -182,7 +188,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Cards\Level2\" />
     <Folder Include="Assets\Cards\Level3\" />
     <Folder Include="Assets\HomeScreen\" />
     <Folder Include="Assets\LastScreen\" />

@@ -56,29 +56,39 @@ namespace Memomix
             this.ImageCard.Source = new BitmapImage(new Uri("ms-appx:///Assets/Cards/Level"+levelId+"/carte"+ cardId +".png"));
         }
 
+        int count = 0;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MemoryCardOpened?.Invoke(this, null);
-            if (IsValidator == false)
+            RepeatButton butt = sender as RepeatButton;
+            
+            if (count < 2)
             {
-                if (cardOpen == false)
-                {
-                    FlipOpen.Begin();
-                    cardOpen = true;
-                }
-                else
-                {
-                    FlipClose.Begin();
-                    cardOpen = false;
-                }
-            } else
-            {
-                // fire event validator clicked
-                // check other memory card
-                //
+                count += 1;
+                Debug.WriteLine(count);
             }
+            else
+            {
+                this.Open();
+                butt.IsEnabled = false;
+                butt.IsEnabled = true;
+            }                                                                                                                                                 
+            
         }
 
+        public void Open()
+        {
+            MemoryCardOpened?.Invoke(this, null);
+            if (cardOpen == false)
+            {
+                FlipOpen.Begin();
+                cardOpen = true;
+            }
+            else
+            {
+                FlipClose.Begin();
+                cardOpen = false;
+            }
+        }
         public void Close()
         {
             if (cardOpen)
@@ -88,5 +98,27 @@ namespace Memomix
             }
                 
         }
+
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("test button pressed");
+        }
+
+        //DateTime firstPressTimeStamp;
+        //private void Button_PointerPressed(object sender, PointerRoutedEventArgs e)
+        //{
+        //    firstPressTimeStamp = DateTime.Now;
+        //    Debug.WriteLine("pressed");
+        //}
+
+        //private void Button_PointerReleased(object sender, PointerRoutedEventArgs e)
+        //{
+        //    TimeSpan diff = DateTime.Now.Subtract(firstPressTimeStamp);
+        //    if (diff.TotalSeconds > 2)
+        //    {
+        //        Button_Click(null, null);
+        //    }
+        //    Debug.WriteLine("released");
+        //}
     }
 }

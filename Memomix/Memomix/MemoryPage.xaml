@@ -12,42 +12,42 @@
         <Button x:Name="BackButton" Content="Retour" Foreground="White" Click="BackButton_Click" VerticalAlignment="Top" Style="{StaticResource AccentButtonStyle}"/>
         <TextBlock x:Name="LevelNameText" FontSize="52" Foreground="White" HorizontalAlignment="Center"/>
 
-        <Grid x:Name="Player1Grid" Margin="100">
+        <Grid x:Name="Player1Grid" Margin="100" VerticalAlignment="Center" >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <local:MemoryCard x:Name="Card1" Grid.Row="0" Width="200" Height="150"/>
-            <local:MemoryCard x:Name="Card2" Grid.Row="1" Width="200" Height="150"/>
-            <local:MemoryCard x:Name="Card3" Grid.Row="2" Width="200" Height="150"/>
+            <local:MemoryCard x:Name="Card1" Grid.Column="0" Width="200" Height="300" Margin="0 100"/>
+            <local:MemoryCard x:Name="Card2" Grid.Column="1" Width="200" Height="300"/>
+            <local:MemoryCard x:Name="Card3" Grid.Column="2" Width="200" Height="300"/>
 
-            <local:MemoryCard x:Name="Card4" Grid.Column="1" Grid.Row="0" Width="200" Height="150" Margin="100 0"/>
-            <local:MemoryCard x:Name="Card5" Grid.Column="1" Grid.Row="1" Width="200" Height="150" Margin="100 0"/>
-            <local:MemoryCard x:Name="Card6" Grid.Column="1" Grid.Row="2" Width="200" Height="150" Margin="100 0"/>
+            <local:MemoryCard x:Name="Card4" Grid.Row="1" Grid.Column="0" Width="200" Height="300" Margin=" 0"/>
+            <local:MemoryCard x:Name="Card5" Grid.Row="1" Grid.Column="1" Width="200" Height="300" Margin=" 0"/>
+            <local:MemoryCard x:Name="Card6" Grid.Row="1" Grid.Column="2" Width="200" Height="300" Margin=" 0"/>
         </Grid>
 
-        <Grid x:Name="Player2Grid" Margin="100" HorizontalAlignment="Right">
+        <Grid x:Name="Player2Grid" Margin="100" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <local:MemoryCard x:Name="Card7" Grid.Row="0" Width="200" Height="150"/>
-            <local:MemoryCard x:Name="Card8" Grid.Row="1" Width="200" Height="150"/>
-            <local:MemoryCard x:Name="Card9" Grid.Row="2" Width="200" Height="150"/>
+            <local:MemoryCard x:Name="Card7" Grid.Column="0" Width="200" Height="300" Margin="0 100"/>
+            <local:MemoryCard x:Name="Card8" Grid.Column="1" Width="200" Height="300"/>
+            <local:MemoryCard x:Name="Card9" Grid.Column="2" Width="200" Height="300"/>
 
-            <local:MemoryCard x:Name="ValidatorCard" Grid.Column="1" Grid.Row="0" Width="200" Height="150" Margin="100 0"/>
-            <local:MemoryCard x:Name="Card11" Grid.Column="1" Grid.Row="1" Width="200" Height="150" Margin="100 0"/>
-            <local:MemoryCard x:Name="Card12" Grid.Column="1" Grid.Row="2" Width="200" Height="150" Margin="100 0"/>
+            <local:MemoryCard x:Name="ValidatorCard" Grid.Row="1" Grid.Column="0" Width="200" Height="300" Margin="0 0"/>
+            <local:MemoryCard x:Name="Card11" Grid.Row="1" Grid.Column="1" Width="200" Height="300" Margin="0 0"/>
+            <local:MemoryCard x:Name="Card12" Grid.Row="1" Grid.Column="2" Width="200" Height="300" Margin="0 0"/>
         </Grid>
 
     </Grid>
