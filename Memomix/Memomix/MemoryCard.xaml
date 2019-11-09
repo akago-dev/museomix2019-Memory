@@ -39,14 +39,14 @@
     <Grid>
     <RepeatButton Click="Button_Click" ClickMode="Press" Delay="1000">
         <Grid>
-            <Image x:Name="ImageCard" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png">
+            <Image x:Name="ImageCard" Stretch="Uniform" Source="/Assets/Cards/Level2/carte1.png">
                 <Image.Projection>
                     <PlaneProjection RotationY="-90"/>
                 </Image.Projection>
             </Image>
             <Image x:Name="ImageCover" Stretch="Uniform" Source="/Assets/Cards/cover.png">
                 <Image.Projection>
-                    <PlaneProjection/>
+                    <PlaneProjection RotationY="90"/>
                 </Image.Projection>
             </Image>
             <Image x:Name="ImageValidator" Opacity="0" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png"/>

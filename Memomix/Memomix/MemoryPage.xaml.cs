@@ -31,10 +31,18 @@ namespace Memomix
         {
             this.InitializeComponent();
             LevelNameText.Text = "Niveau " + App.LevelId;
-            SetCardsForLevel(App.LevelId);
+            
             this.ValidatorCard.IsValidator = true;
             this.RegisterMemoryCardsEvents();
+            Loaded += MemoryPage_Loaded;
         }
+
+        private void MemoryPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            SetCardsForLevel(App.LevelId);
+        }
+
+         
 
         private void RegisterMemoryCardsEvents()
         {
@@ -46,7 +54,7 @@ namespace Memomix
             Card6.MemoryCardOpened += Player1Card_MemoryCardOpened;
             Card7.MemoryCardOpened += Player2Card_MemoryCardOpened;
             Card8.MemoryCardOpened += Player2Card_MemoryCardOpened;
-            Card9.MemoryCardOpened += Player2Card_MemoryCardOpened;
+            Card10.MemoryCardOpened += Player2Card_MemoryCardOpened;
             ValidatorCard.MemoryCardOpened += ValidatorCardOpened;
             Card11.MemoryCardOpened += Player2Card_MemoryCardOpened;
             Card12.MemoryCardOpened += Player2Card_MemoryCardOpened;
@@ -85,10 +93,14 @@ namespace Memomix
             if (currentPlayer1CardId == intruderId)
             {
                 Debug.WriteLine("BIG WIN");
+                App.HasWon = true;
+                Frame.Navigate(typeof(EndPage), null, new SuppressNavigationTransitionInfo());
             }
             else
             {
                 Debug.WriteLine("BIG LOOSE");
+                App.HasWon = false;
+                Frame.Navigate(typeof(EndPage), null, new SuppressNavigationTransitionInfo());
             }
         }
 
@@ -107,7 +119,7 @@ namespace Memomix
         {
             var nextCardsImagesIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
             var player1MemoryCardsId = new List<int>() { 0, 1, 2, 3, 4, 5 };
-            var player2MemoryCardsId = new List<int>() { 0, 1, 2, 4, 5 }; // the fourth child is the validator so remove it (doesnt need a card)      
+            var player2MemoryCardsId = new List<int>() { 0, 1, 3, 4, 5 }; // the second child is the validator so remove it (doesnt need a card)      
 
             //Randomization of the cards ids and memory cards children ids
             nextCardsImagesIds.Shuffle();

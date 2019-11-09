@@ -48,6 +48,12 @@ namespace Memomix
         public MemoryCard()
         {
             this.InitializeComponent();
+            Loaded += MemoryCard_Loaded;
+        }
+
+        private void MemoryCard_Loaded(object sender, RoutedEventArgs e)
+        {
+            FlipClose.Begin();
         }
 
         public void SetImageFromLevelAndCardId(int levelId = 1, int cardId = 1)
@@ -58,36 +64,37 @@ namespace Memomix
 
         int count = 0;
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RepeatButton butt = sender as RepeatButton;
-            
-            if (count < 2)
+        {                       
+            if (count < 2) // Wait for 2 seconds before launching action
             {
                 count += 1;
-                Debug.WriteLine(count);
             }
             else
             {
                 this.Open();
+                RepeatButton butt = sender as RepeatButton;
                 butt.IsEnabled = false;
                 butt.IsEnabled = true;
-            }                                                                                                                                                 
-            
+                count = 0;
+            }                                                                                                                                                             
         }
 
         public void Open()
-        {
+        {            
             MemoryCardOpened?.Invoke(this, null);
-            if (cardOpen == false)
+            if (IsValidator == false)
             {
-                FlipOpen.Begin();
-                cardOpen = true;
-            }
-            else
-            {
-                FlipClose.Begin();
-                cardOpen = false;
-            }
+                if (cardOpen == false)
+                {
+                    FlipOpen.Begin();
+                    cardOpen = true;
+                }
+                else
+                {
+                    FlipClose.Begin();
+                    cardOpen = false;
+                }
+            }            
         }
         public void Close()
         {
@@ -102,23 +109,6 @@ namespace Memomix
         private void RepeatButton_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("test button pressed");
-        }
-
-        //DateTime firstPressTimeStamp;
-        //private void Button_PointerPressed(object sender, PointerRoutedEventArgs e)
-        //{
-        //    firstPressTimeStamp = DateTime.Now;
-        //    Debug.WriteLine("pressed");
-        //}
-
-        //private void Button_PointerReleased(object sender, PointerRoutedEventArgs e)
-        //{
-        //    TimeSpan diff = DateTime.Now.Subtract(firstPressTimeStamp);
-        //    if (diff.TotalSeconds > 2)
-        //    {
-        //        Button_Click(null, null);
-        //    }
-        //    Debug.WriteLine("released");
-        //}
+        }        
     }
 }
