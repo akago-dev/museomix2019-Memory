@@ -159,6 +159,8 @@
     <Content Include="Assets\Cards\Test\carte5.png" />
     <Content Include="Assets\Cards\Test\intrus.png" />
     <Content Include="Assets\Cards\validator.png" />
+    <Content Include="Assets\HomeScreen\background.png" />
+    <Content Include="Assets\HomeScreen\start.png" />
     <Content Include="Assets\LastScreen\failure.png" />
     <Content Include="Assets\LastScreen\victory.png" />
     <Content Include="Assets\LastScreen\retry.png" />
@@ -201,7 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Cards\Level3\" />
-    <Folder Include="Assets\HomeScreen\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

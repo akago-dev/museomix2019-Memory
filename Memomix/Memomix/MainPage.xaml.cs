@@ -28,6 +28,25 @@ namespace Memomix
             this.InitializeComponent();
         }
 
+        int count = 0;
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (count < 2) // Wait for 2 seconds before launching action
+            {
+                count += 1;
+            }
+            else
+            {
+                var levelsIDS = new List<int>() { 1, 2};
+
+                //Randomization of the levels ids and memory cards children ids
+                levelsIDS.Shuffle();                
+
+                App.LevelId = levelsIDS.First();
+                Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
+            }
+        }
+
         private void Level1Button_Click(object sender, RoutedEventArgs e)
         {
             App.LevelId = 1;
