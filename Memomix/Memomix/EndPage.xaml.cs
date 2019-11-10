@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -27,6 +28,17 @@ namespace Memomix
         public EndPage()
         {
             this.InitializeComponent();
+
+            App.client.On("retry", async (data) =>
+            {
+                Debug.WriteLine("WEB RETRY : ");
+
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                    Retry();
+                });
+            });
+
+
             if (App.HasWon)
             {
                 TitleText.Text = "BRAVO !";
@@ -40,6 +52,8 @@ namespace Memomix
 
             }
             SetIntruderImage();
+
+
         }
 
         private void SetIntruderImage()
@@ -55,10 +69,16 @@ namespace Memomix
             }
             else
             {
-                Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
+                Retry();
             }
         }
 
-        
+        private void Retry()
+        {
+            Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
+
+        }
+
+
     }
 }

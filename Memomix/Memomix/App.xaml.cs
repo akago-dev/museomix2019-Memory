@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocketIO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Core;
+using System.Diagnostics;
 
 namespace Memomix
 {
@@ -26,6 +29,7 @@ namespace Memomix
         public static int LevelId = 1;
         public static bool HasWon = false;
         public static int IntruderId = 1;
+        public static Client client;
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
         /// à être exécutée. Elle correspond donc à l'équivalent logique de main() ou WinMain().
@@ -35,6 +39,10 @@ namespace Memomix
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+
+            client = new Client();
+            client.Connect(new Uri("ws://localhost:1010/socket.io/?EIO=4&transport=websocket"));
+                        
 
         }
 

@@ -34,6 +34,39 @@ namespace Memomix
             this.ValidatorCard.IsValidator = true;
             this.RegisterMemoryCardsEvents();
             Loaded += MemoryPage_Loaded;
+
+           
+
+            App.client.On("player1", async (data) =>
+            {
+                int id;
+                var str = data.GetArray().GetStringAt(0);                
+                
+                Int32.TryParse(str, out id);
+                Debug.WriteLine("Bouton player 1 : " + id);
+                
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                    var child = Player1Grid.Children.ElementAt(id - 1);
+                    MemoryCard mem = child as MemoryCard;
+                    mem.Open();
+                });
+            });
+
+            App.client.On("player2", async (data) =>
+            {
+                int id;
+                var str = data.GetArray().GetStringAt(0);
+
+                Int32.TryParse(str, out id);
+                Debug.WriteLine("Bouton player 2 : " + id);
+                                
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                    var child = Player2Grid.Children.ElementAt(id - 1);
+                    MemoryCard mem = child as MemoryCard;
+                    mem.Open();
+                });
+                               
+            });
         }
 
         private void MemoryPage_Loaded(object sender, RoutedEventArgs e)

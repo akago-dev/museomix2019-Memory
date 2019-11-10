@@ -146,12 +146,20 @@
     <Content Include="Assets\Cards\Level1\carte4.png" />
     <Content Include="Assets\Cards\Level1\carte5.png" />
     <Content Include="Assets\Cards\Level1\carte6.png" />
+    <Content Include="Assets\Cards\Level1\carte7.png" />
     <Content Include="Assets\Cards\Level2\carte1.png" />
     <Content Include="Assets\Cards\Level2\carte2.png" />
     <Content Include="Assets\Cards\Level2\carte3.png" />
     <Content Include="Assets\Cards\Level2\carte4.png" />
     <Content Include="Assets\Cards\Level2\carte5.png" />
     <Content Include="Assets\Cards\Level2\carte6.png" />
+    <Content Include="Assets\Cards\Level3\carte1.png" />
+    <Content Include="Assets\Cards\Level3\carte2.png" />
+    <Content Include="Assets\Cards\Level3\carte3.png" />
+    <Content Include="Assets\Cards\Level3\carte4.png" />
+    <Content Include="Assets\Cards\Level3\carte5.png" />
+    <Content Include="Assets\Cards\Level3\carte6.png" />
+    <Content Include="Assets\Cards\Level3\carte7.png" />
     <Content Include="Assets\Cards\Test\carte1.png" />
     <Content Include="Assets\Cards\Test\carte2.png" />
     <Content Include="Assets\Cards\Test\carte3.png" />
@@ -201,8 +209,12 @@
       <Version>6.2.9</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Assets\Cards\Level3\" />
+    <ProjectReference Include="..\socket.io-uwp-master\Lib\Lib.csproj">
+      <Project>{8D8A43D5-7722-4CB9-8A10-703F17DAE6C5}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

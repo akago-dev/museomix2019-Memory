@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +27,16 @@ namespace Memomix
         public MainPage()
         {
             this.InitializeComponent();
+
+            App.client.On("start", async (data) =>
+            {                
+                Debug.WriteLine("WEB START : ");
+
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                    Start();
+                });
+            });
+
         }
 
         int count = 0;
@@ -37,14 +48,19 @@ namespace Memomix
             }
             else
             {
-                var levelsIDS = new List<int>() { 1, 2};
-
-                //Randomization of the levels ids and memory cards children ids
-                levelsIDS.Shuffle();                
-
-                App.LevelId = levelsIDS.First();
-                Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
+                Start();
             }
+        }
+
+        private void Start()
+        {
+            var levelsIDS = new List<int>() { 1, 2 };
+
+            //Randomization of the levels ids and memory cards children ids
+            levelsIDS.Shuffle();
+
+            App.LevelId = levelsIDS.First();
+            Frame.Navigate(typeof(MemoryPage), null, new SuppressNavigationTransitionInfo());
         }
 
         private void Level1Button_Click(object sender, RoutedEventArgs e)
