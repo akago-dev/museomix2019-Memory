@@ -158,6 +158,11 @@
     <Content Include="Assets\Cards\Test\carte4.png" />
     <Content Include="Assets\Cards\Test\carte5.png" />
     <Content Include="Assets\Cards\Test\intrus.png" />
+    <Content Include="Assets\Cards\validator.png" />
+    <Content Include="Assets\LastScreen\failure.png" />
+    <Content Include="Assets\LastScreen\victory.png" />
+    <Content Include="Assets\LastScreen\retry.png" />
+    <Content Include="Assets\LastScreen\bravo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -197,7 +202,6 @@
   <ItemGroup>
     <Folder Include="Assets\Cards\Level3\" />
     <Folder Include="Assets\HomeScreen\" />
-    <Folder Include="Assets\LastScreen\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

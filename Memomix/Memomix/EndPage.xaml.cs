@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -28,15 +29,25 @@ namespace Memomix
             this.InitializeComponent();
             if (App.HasWon)
             {
-                FirstText.Text = "BIG WINNER";
+                TitleText.Text = "BRAVO !";
+                this.ImageVictory.Visibility = Visibility.Visible;
+                this.ImageFailure.Visibility = Visibility.Collapsed;
             } else
             {
-                FirstText.Text = "BIG LOOSER";
+                TitleText.Text = "ZUT !";
+                this.ImageVictory.Visibility = Visibility.Collapsed;
+                this.ImageFailure.Visibility = Visibility.Visible;
+
             }
+            SetIntruderImage();
         }
 
+        private void SetIntruderImage()
+        {
+            this.ImageIntruder.Source = new BitmapImage(new Uri("ms-appx:///Assets/Cards/Level" + App.LevelId + "/carte" + App.IntruderId + ".png"));
+        }
         int count = 0;
-        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        private void RetryButton_Click(object sender, RoutedEventArgs e)
         {
             if (count < 2) // Wait for 2 seconds before launching action
             {
@@ -47,5 +58,7 @@ namespace Memomix
                 Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
             }
         }
+
+        
     }
 }

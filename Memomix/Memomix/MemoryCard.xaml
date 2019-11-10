@@ -49,7 +49,7 @@
                     <PlaneProjection RotationY="90"/>
                 </Image.Projection>
             </Image>
-            <Image x:Name="ImageValidator" Opacity="0" Stretch="Uniform" Source="/Assets/Cards/Test/carte1.png"/>
+            <Image x:Name="ImageValidator" Opacity="0" Stretch="Uniform" Source="/Assets/Cards/validator.png"/>
         </Grid>
     </RepeatButton>
     </Grid>

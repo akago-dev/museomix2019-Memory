@@ -39,8 +39,8 @@ namespace Memomix
                 if (value == true)
                 {
                     this.ImageCard.Opacity = 0;
-                    this.ImageCover.Opacity = 0.5;
-                    this.ImageValidator.Opacity = 0;
+                    this.ImageCover.Opacity = 0;
+                    this.ImageValidator.Opacity = 1;
                 }
             }
         }

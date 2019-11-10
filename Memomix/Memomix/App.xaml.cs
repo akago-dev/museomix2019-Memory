@@ -25,6 +25,7 @@ namespace Memomix
     {
         public static int LevelId = 1;
         public static bool HasWon = false;
+        public static int IntruderId = 1;
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
         /// à être exécutée. Elle correspond donc à l'équivalent logique de main() ou WinMain().

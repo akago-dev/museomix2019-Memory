@@ -1,0 +1,132 @@
+<!DOCTYPE sauvegarde>
+<Sequences projectionPositionY="90" projectionWidth="1280" backgroundActivated="0" projectionHeight="800" indexScreen="" backgroundPath="" backgroundPosX="0" HMversionID="152" backgroundPosY="0" backgroundFitMode="0" clipMode="0" backgroundWidth="800" tempo="120" backgroundHeight="600" projectionPositionX="149" defaultIdxBeat="1" defaultTime="2" timeMode="0">
+ <independentSettings>
+  <facePosition independent="0"/>
+  <faceGroup independent="1"/>
+  <faceCenter independent="0"/>
+  <playerPosition independent="0"/>
+  <playerMedia independent="0"/>
+ </independentSettings>
+ <audioAnalysis highGain="25" bassGain="25" midGain="25" globalGain="0">
+  <bars>
+   <bar mid="0" id="0" bass="1" high="0"/>
+   <bar mid="0" id="1" bass="1" high="0"/>
+   <bar mid="0" id="2" bass="1" high="0"/>
+   <bar mid="0" id="3" bass="1" high="0"/>
+   <bar mid="0" id="4" bass="1" high="0"/>
+   <bar mid="1" id="5" bass="0" high="0"/>
+   <bar mid="1" id="6" bass="0" high="0"/>
+   <bar mid="1" id="7" bass="0" high="0"/>
+   <bar mid="1" id="8" bass="0" high="0"/>
+   <bar mid="1" id="9" bass="0" high="0"/>
+   <bar mid="0" id="10" bass="0" high="1"/>
+   <bar mid="0" id="11" bass="0" high="1"/>
+   <bar mid="0" id="12" bass="0" high="1"/>
+   <bar mid="0" id="13" bass="0" high="1"/>
+   <bar mid="0" id="14" bass="0" high="1"/>
+  </bars>
+ </audioAnalysis>
+ <sequence name="name" checked="1" id="0" loop="0" nbbeat="4" duration="2">
+  <shaders>
+   <shader name="Black and White" state="0" type="0" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Blue" state="0" type="1" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="100"/>
+   <shader name="Blur" state="0" type="2" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Contrate" state="0" type="3" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Convergence" state="0" type="4" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Cut Slider" state="0" type="5" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Glow" state="0" type="6" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Green" state="0" type="7" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="100"/>
+   <shader name="Noise" state="0" type="8" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Old Tv" state="0" type="9" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Red" state="0" type="10" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="100"/>
+   <shader name="Shaker" state="0" type="11" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Slitscan" state="0" type="12" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Strobe" state="0" type="13" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Swell" state="0" type="14" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+   <shader name="Twist" state="0" type="15" mode="0" rightValue="80" leftValue="20" order="-1" singleValue="0"/>
+  </shaders>
+  <transitions>
+   <transition state="0" type="1" mode="0" sens="0" center="0" angle="0"/>
+   <transition state="0" type="0" mode="0" sens="0" center="0" angle="0"/>
+  </transitions>
+  <groups>
+   <group id="0" groupPlayers="1">
+    <faces/>
+   </group>
+   <group id="1" groupPlayers="1">
+    <faces/>
+   </group>
+   <group name="Masks" color="#000000" id="2" groupPlayers="0">
+    <faces/>
+   </group>
+   <group name="Group 1" color="#ffffff" id="3" groupPlayers="0">
+    <faces/>
+    <borderPlain activated="1">
+     <color mode="0">
+      <colorSimple green="255" blue="255" opacity="100" red="255"/>
+      <colorLeft green="78" blue="80" opacity="100" red="255"/>
+      <colorRight green="212" blue="35" opacity="100" red="249"/>
+     </color>
+     <width mode="0" rightValue="6" leftValue="1" singleValue="1"/>
+     <variation phase="0" modeVar="0" speedMode="0" mode="0" rightValue="80" speedTempo="2" leftValue="20" singleValue="50"/>
+    </borderPlain>
+    <borderLine lineNumber="1" direction="0" phase="0" activated="0" lineMode="0">
+     <color mode="0">
+      <colorSimple green="255" blue="255" opacity="100" red="255"/>
+      <colorLeft green="78" blue="80" opacity="100" red="255"/>
+      <colorRight green="212" blue="35" opacity="100" red="249"/>
+     </color>
+     <width mode="0" rightValue="10" leftValue="1" singleValue="1"/>
+     <speed mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <lineLength mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+    </borderLine>
+    <borderRepeat centerMode="1" activated="0" nbRepeat="1">
+     <depth mode="0" rightValue="80" leftValue="20" singleValue="80"/>
+    </borderRepeat>
+    <fillingPlain mode="0" activated="0">
+     <colorSingle mode="0">
+      <colorSimple green="255" blue="255" opacity="100" red="255"/>
+      <colorLeft green="78" blue="80" opacity="100" red="255"/>
+      <colorRight green="212" blue="35" opacity="100" red="249"/>
+     </colorSingle>
+     <colorGradient sensGrad="0" phaseGrad="0" modeGrad="0" angle="0" angleB="90" speedGrad="5">
+      <colorGrad1 green="78" blue="80" opacity="100" red="255"/>
+      <colorGrad2 green="212" blue="35" opacity="100" red="249"/>
+     </colorGradient>
+     <colorRandom speedTime="50" speedMode="0" nbColor="2" speedTempo="2" smoothness="1">
+      <color green="79" blue="88" weight="5" opacity="100" red="255"/>
+      <color green="205" blue="35" weight="5" opacity="100" red="252"/>
+     </colorRandom>
+    </fillingPlain>
+    <fillingSpecial phase="0" mode="0" centerMode="1" activated="0" angle="0" angle2="45">
+     <variation mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <speed mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <color mode="0">
+      <colorSimple green="0" blue="0" opacity="100" red="0"/>
+      <colorLeft green="78" blue="80" opacity="100" red="255"/>
+      <colorRight green="212" blue="35" opacity="100" red="249"/>
+     </color>
+     <stripesSize mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <stripesSize2 mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+    </fillingSpecial>
+    <fillingSnake direction="0" speedMode="0" applyOnSpecial="0" activated="0" size="1" speedTempo="2" applyOnColor="1">
+     <speedTime mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <shapesID size="0"/>
+    </fillingSnake>
+    <move direction="0" rotZ="0" phase="0" centerMode="1" rotY="0" activated="0" rotX="0">
+     <speed mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+    </move>
+    <structure innerOffset="0" nbInstancesRadialOrWire="15" phase="0" mode="0" centerMode="1" nbSplitEllipse="6" sensRotation="0" activated="0" instancesMultiplier="1" nbInstances="1">
+     <color mode="0">
+      <colorSimple green="255" blue="255" opacity="100" red="255"/>
+      <colorLeft green="78" blue="80" opacity="100" red="255"/>
+      <colorRight green="212" blue="35" opacity="100" red="249"/>
+     </color>
+     <width mode="0" rightValue="6" leftValue="1" singleValue="1"/>
+     <speed mode="0" rightValue="80" leftValue="20" singleValue="50"/>
+     <depth mode="0" rightValue="80" leftValue="20" singleValue="80"/>
+    </structure>
+   </group>
+  </groups>
+ </sequence>
+</Sequences>

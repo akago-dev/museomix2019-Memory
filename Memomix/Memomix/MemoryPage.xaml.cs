@@ -25,7 +25,6 @@ namespace Memomix
     /// </summary>
     public sealed partial class MemoryPage : Page
     {
-        private int intruderId;
         private int currentPlayer1CardId;
         public MemoryPage()
         {
@@ -41,9 +40,7 @@ namespace Memomix
         {
             SetCardsForLevel(App.LevelId);
         }
-
          
-
         private void RegisterMemoryCardsEvents()
         {
             Card1.MemoryCardOpened += Player1Card_MemoryCardOpened;
@@ -90,7 +87,7 @@ namespace Memomix
             var validator = sender as MemoryCard;
             CloseMemoryCards(Player2Grid.Children, validator);
 
-            if (currentPlayer1CardId == intruderId)
+            if (currentPlayer1CardId == App.IntruderId)
             {
                 Debug.WriteLine("BIG WIN");
                 App.HasWon = true;
@@ -141,8 +138,8 @@ namespace Memomix
                     player2MemoryCardsId.RemoveAt(0);
                 } else
                 {
-                    // there is still one image but no children left in player 2 grid so this is the intruder.
-                    this.intruderId = nextCartImageId;
+                    // there is still one image but no children left in player 2 grid so this is the intruder.                    
+                    App.IntruderId = nextCartImageId;
                 }
             }
         }

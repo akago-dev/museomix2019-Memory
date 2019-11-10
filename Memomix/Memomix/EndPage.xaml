@@ -7,12 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="Black">
+    <Grid>
+        <Image x:Name="ImageVictory" Stretch="Fill" Source="/Assets/LastScreen/victory.png"/>
+        <Image x:Name="ImageFailure" Stretch="Fill" Source="/Assets/LastScreen/failure.png"/>
 
-    <StackPanel VerticalAlignment="Center" Spacing="25">
-        <TextBlock x:Name="FirstText" Text="you won" Foreground="White" FontSize="52" FontWeight="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <RepeatButton 
-            ClickMode="Press" Delay="1000" Click="RepeatButton_Click"
-            Content="RETRY"
-            Width="100" Height="50" FontSize="20" FontWeight="Black" Foreground="Black" Background="White" HorizontalAlignment="Center"/>
-    </StackPanel>
+        <Image x:Name="ImageIntruder" Width="500" Height="780" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Cards/cover.png">
+            <Image.Projection>
+                <PlaneProjection RotationZ="10"/>
+            </Image.Projection>
+        </Image>
+
+        <RepeatButton x:Name="RetryButton" Click="RetryButton_Click"
+                ClickMode="Press" Delay="1000"
+                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="100">
+            <Image Source="/Assets/LastScreen/retry.png" Width="200" Height="200"/>
+        </RepeatButton>
+
+        <Grid Width="550" Height="300" VerticalAlignment="Top">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/LastScreen/bravo.png"/>
+            </Grid.Background>
+            <TextBlock x:Name="TitleText" Text="BRAVO !" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="100" FontFamily="Segoe UI Black" FontWeight="Bold" Margin="0,70,0,0"/>
+        </Grid>
+
+        <Border Background="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="350 0 0 100">
+            <TextBlock 
+                Width="800"
+                Text="Ouvre l'oeil, des cartes ici me ressemblent! Cherche autour de toi!" Foreground="Black"
+                Margin="20"
+                TextWrapping="WrapWholeWords"
+                TextAlignment="Center"
+               FontSize="35" FontFamily="Segoe UI Black" FontWeight="Bold" />
+        </Border>
+    </Grid>
 </Page>
